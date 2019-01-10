@@ -10,6 +10,8 @@ import {
   Container
 } from "reactstrap";
 import { withRouter } from "react-router-dom";
+import { logOut } from "../actions/userActions";
+import { connect } from "react-redux";
 class AppNavbar extends Component {
   constructor(props) {
     super(props);
@@ -29,6 +31,7 @@ class AppNavbar extends Component {
       localStorage.removeItem("password");
     }
     this.props.history.push(e.target.dataset.to);
+    this.props.logOut();
   };
   render() {
     return (
@@ -72,4 +75,15 @@ class AppNavbar extends Component {
     );
   }
 }
-export default withRouter(AppNavbar);
+const mapStateToProps = state => ({
+  user: state.user
+});
+const mapDispatchToProps = {
+  logOut
+};
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(AppNavbar)
+);

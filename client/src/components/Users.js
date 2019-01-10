@@ -24,6 +24,7 @@ class Users extends Component {
     this.props.getUsers();
   }
   static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.user.loading) return null;
     if (nextProps.user.users.length !== prevState.users.length) {
       nextProps.user.users.map(user => {
         user.isOpen = false;

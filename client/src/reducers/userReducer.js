@@ -4,7 +4,8 @@ import {
   VALIDATE_USER_FAILURE,
   ADD_USER,
   GET_USERS_SUCCESS,
-  GET_USERS_FAILURE
+  GET_USERS_FAILURE,
+  LOGOUT
 } from "./../actions/types";
 const initialState = {
   userDetails: {
@@ -22,6 +23,10 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
+    case LOGOUT:
+      return {
+        ...initialState
+      };
     case VALIDATE_USER:
       return {
         ...state,

@@ -3,7 +3,8 @@ import {
   VALIDATE_USER_SUCCESS,
   VALIDATE_USER_FAILURE,
   GET_USERS_SUCCESS,
-  GET_USERS_FAILURE
+  GET_USERS_FAILURE,
+  LOGOUT
 } from "./types";
 import axios from "axios";
 export const validateUser = user => dispatch => {
@@ -35,4 +36,7 @@ export const setUserLoading = () => {
   return {
     type: VALIDATE_USER
   };
+};
+export const logOut = () => dispatch => {
+  dispatch({ type: LOGOUT });
 };
