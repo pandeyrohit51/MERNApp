@@ -28,21 +28,32 @@ class AddUserModal extends Component {
     this.setState({
       modal: !this.state.modal
     });
+    this.props.hideModal();
   };
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
   onSubmit = e => {
     e.preventDefault();
-    const newItem = {
-      username: this.state.username,
-      password: this.state.password,
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      age: this.state.age
-    };
-    this.props.addUser(newItem);
-    this.toggle();
+    if (
+      this.state.username == "" ||
+      this.state.password === "" ||
+      this.state.firstName === "" ||
+      this.state.lastName === "" ||
+      this.state.age <= 0
+    ) {
+      alert("Please fill all the details");
+    } else {
+      const newItem = {
+        username: this.state.username,
+        password: this.state.password,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        age: this.state.age
+      };
+      this.props.addUser(newItem);
+      this.toggle();
+    }
   };
   render() {
     return (
@@ -93,7 +104,7 @@ class AddUserModal extends Component {
                   onChange={this.onChange}
                 />
                 <Button color="dark" style={{ marginTop: "2rem" }} block>
-                  Add User
+                  Submit
                 </Button>
               </FormGroup>
             </Form>

@@ -14,6 +14,7 @@ import {
 import { validateUser } from "../actions/userActions";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import AddUserModal from "./AddUserModal";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -21,9 +22,11 @@ class Login extends Component {
       username: "",
       password: "",
       success: false,
-      error: false
+      error: false,
+      modal: false
     };
     this.onChange = this.onChange.bind(this);
+    this.hideModal = this.hideModal.bind(this);
   }
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -57,6 +60,9 @@ class Login extends Component {
       this.props.history.push("/home");
     }
   }
+  hideModal = () => {
+    this.setState({ modal: false });
+  };
   render() {
     return (
       <Container className="mt-5">
@@ -100,11 +106,21 @@ class Login extends Component {
                 <Button color="dark" style={{ marginTop: "2rem" }} block>
                   Log In
                 </Button>
+                <p className="float-right mt-2">
+                  <a
+                    href="#"
+                    className="text-primary"
+                    onClick={() => this.setState({ modal: !this.state.modal })}
+                  >
+                    Sign Up
+                  </a>
+                </p>
               </FormGroup>
             </Form>
           </Col>
           <Col xs="0" md="3" sm="3" lg="3" />
         </Row>
+        {this.state.modal ? <AddUserModal hideModal={this.hideModal} /> : null}
       </Container>
     );
   }

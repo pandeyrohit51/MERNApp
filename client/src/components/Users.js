@@ -36,6 +36,9 @@ class Users extends Component {
       return null;
     }
   }
+  hideModal = () => {
+    this.setState({ modal: false });
+  };
   toggle = index => {
     let users = this.state.users;
     users[index].isOpen = !users[index].isOpen;
@@ -103,7 +106,7 @@ class Users extends Component {
         >
           +
         </Button>
-        {this.state.modal ? <AddUserModal /> : null}
+        {this.state.modal ? <AddUserModal hideModal={this.hideModal} /> : null}
       </Container>
     );
   }
