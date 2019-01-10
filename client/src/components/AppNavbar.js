@@ -38,18 +38,23 @@ class AppNavbar extends Component {
       <div>
         <Navbar color="dark" dark expand="sm" className="mb-5">
           <Container>
-            <NavbarBrand href="/">Shopping List</NavbarBrand>
+            <NavbarBrand
+              href="#"
+              onClick={() => this.props.history.push("/home")}
+            >
+              MERN
+            </NavbarBrand>
             <NavbarToggler onClick={() => this.toggle()} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar onClick={e => this.navigate(e)}>
                 <NavItem>
-                  <NavLink data-name="users" data-to="/users" href="#">
-                    Users
+                  <NavLink data-name="home" data-to="/home" href="#">
+                    Home
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink data-name="home" data-to="/home" href="#">
-                    Home
+                  <NavLink data-name="users" data-to="/users" href="#">
+                    Users
                   </NavLink>
                 </NavItem>
                 <NavItem>
