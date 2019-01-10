@@ -1,0 +1,28 @@
+.remove-btn {
+  margin-right: 5px;
+}
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 200ms ease-in;
+}
+.carousel-custom-class {
+  text-align: center;
+}
+.outline-0 {
+  outline: none;
+}
+.btn-add-user {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}

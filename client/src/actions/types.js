@@ -1,0 +1,11 @@
+export const GET_ITEMS = "GET_ITEMS";
+export const ADD_ITEM = "ADD_ITEM";
+export const DELETE_ITEM = "DELETE_ITEM";
+export const LOADING_ITEMS = "LOADING_ITEMS";
+export const VALIDATE_USER = "VALIDATE_USER";
+export const VALIDATE_USER_SUCCESS = "VALIDATE_USER_SUCCESS";
+export const VALIDATE_USER_FAILURE = "VALIDATE_USER_FAILURE";
+export const ADD_USER = "ADD_USER";
+export const GET_USERS = "GET_USERS";
+export const GET_USERS_SUCCESS = "GET_USERS_SUCCESS";
+export const GET_USERS_FAILURE = "GET_USERS_FAILURE";
