@@ -14,11 +14,11 @@
   "author": "Rohit Pandey",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "create-react-app": "^2.1.3",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "mongoose": "^5.4.2"
   },
   "devDependencies": {
